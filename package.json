@@ -10,7 +10,7 @@
   },
   "scripts": {
     "build": "webpack -p --hide-modules",
-    "dev": "../../node_modules/.bin/webpack-dev-server --env.dev --hot"
+    "dev": "webpack-dev-server --env.dev --hot"
   },
   "dependencies": {
     "dm5": "https://github.com/jri/dm5.git",
