@@ -105,7 +105,7 @@ const actions = {
   // WebSocket messages
 
   _processDirectives (_, directives) {
-    console.log(`Webclient: processing ${directives.length} directives`, directives)
+    console.log(`Mobile: processing ${directives.length} directives`, directives)
     directives.forEach(dir => {
       switch (dir.type) {
       case "UPDATE_TOPIC":
