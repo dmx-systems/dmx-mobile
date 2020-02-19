@@ -41,4 +41,13 @@ This launches the Webpack Dev Server (at port 8084), builds DMX Mobile on-the-fl
 
 ## Version History
 
+**5.0-beta-2** -- Feb 19, 2020
+
+* Features:
+    * Client-sync
+
 **5.0-beta-1** -- Nov 29, 2019
+
+* Features:
+    * Search, Create, Navigate, Edit
+    * Login, Logout
