@@ -1,4 +1,4 @@
-# 1) Every "master" commit initiates build
+# 1) Every "master" and "tags" commit initiates build
 maven-build:
   stage: build
   script:
