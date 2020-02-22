@@ -12,6 +12,7 @@ maven-build:
       - node_modules/
   only:
     - master
+    - tags
 
 # 2) Copies build to both, download/ci/ and dmx-dev-container
 copy-to-ci:
