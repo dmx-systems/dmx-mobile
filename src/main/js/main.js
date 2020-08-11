@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './components/App'
-import dm5 from 'dm5'
+import dm5 from 'dmx-api'
 import store from './store/mobile'
 import router from './router'
 import onHttpError from './error-handler'

@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { MessageBox } from 'element-ui'
-import dm5 from 'dm5'
+import dm5 from 'dmx-api'
 
 Vue.use(Vuex)
 
@@ -64,7 +64,7 @@ const actions = {
     const topicModel = new dm5.Topic(topicType.newTopicModel(value)).fillChildren()
     // console.log('createTopic', topicModel)
     dm5.restClient.createTopic(topicModel).then(topic => {
-      console.log('Created', topic)
+      // console.log('Created', topic)
       dispatch('callTopicRoute', topic.id)
       dispatch('_processDirectives', topic.directives)
     })

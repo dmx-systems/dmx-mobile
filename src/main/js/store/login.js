@@ -1,4 +1,4 @@
-import dm5 from 'dm5'
+import dm5 from 'dmx-api'
 
 const state = {
   username: '',       // logged in user (string); empty string if no user is logged in
