@@ -15,7 +15,8 @@ console.log('[DMX Mobile] 2020/05/25')
 // The dm5-webclient component relies on the "typeCache" store module as registered by dm5.init(). ### TODO: still true?
 const dm5ready = dm5.init({
   store,
-  onHttpError
+  onHttpError,
+  iconRenderers: {}
 })
 
 // 2) Register store modules
