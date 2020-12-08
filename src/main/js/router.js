@@ -264,7 +264,7 @@ function navigate (to, from) {
  * Fetches the given topic and displays it in the detail panel.
  */
 function fetchTopic (id) {
-  dm5.restClient.getTopic(id, true, true).then(topic => {       // includeChildren=true, includeAssocChildren=true
+  dm5.rpc.getTopic(id, true, true).then(topic => {       // includeChildren=true, includeAssocChildren=true
     store.dispatch('displayObject', topic)
     store.dispatch('selectDetail', 'info')
   })
@@ -274,7 +274,7 @@ function fetchTopic (id) {
  * Fetches the given assoc and displays it in the detail panel.
  */
 function fetchAssoc (id) {
-  dm5.restClient.getAssoc(id, true, true).then(assoc => {       // includeChildren=true, includeAssocChildren=true
+  dm5.rpc.getAssoc(id, true, true).then(assoc => {       // includeChildren=true, includeAssocChildren=true
     store.dispatch('displayObject', assoc)
     store.dispatch('selectDetail', 'info')
   })

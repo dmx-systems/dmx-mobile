@@ -63,7 +63,7 @@ const actions = {
     // Note: for value integration to work at least all identity fields must be filled
     const topicModel = new dm5.Topic(topicType.newTopicModel(value)).fillChildren()
     // console.log('createTopic', topicModel)
-    dm5.restClient.createTopic(topicModel).then(topic => {
+    dm5.rpc.createTopic(topicModel).then(topic => {
       // console.log('Created', topic)
       dispatch('callTopicRoute', topic.id)
       dispatch('_processDirectives', topic.directives)
@@ -77,7 +77,7 @@ const actions = {
       idLists.topicIds.forEach(id => dispatch('_deleteTopic', id))
       idLists.assocIds.forEach(id => dispatch('_deleteAssoc', id))
       // update server state
-      dm5.restClient.deleteMulti(idLists).then(response => {
+      dm5.rpc.deleteMulti(idLists).then(response => {
         dispatch('_processDirectives', response.directives)
       })
     }).catch(() => {})    // suppress unhandled rejection on cancel
