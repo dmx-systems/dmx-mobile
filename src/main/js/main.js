@@ -8,7 +8,7 @@ import 'font-awesome/css/font-awesome.css'
 import './element-ui'
 import './websocket'
 
-console.log('[DMX Mobile] 0.3')
+console.log('[DMX Mobile] 0.4-SNAPSHOT')
 
 // 1) Init dm5 library
 // The dm5 library must be inited *before* the dm5-webclient component is instantiated.
@@ -29,7 +29,7 @@ store.watch(
   state => state.login.username,
   username => {
     if (username) {
-      dmx.restClient.getPrivateWorkspace().then(workspace => {
+      dmx.rpc.getPrivateWorkspace().then(workspace => {
         dmx.utils.setCookie('dmx_workspace_id', workspace.id)
       })
     } else {

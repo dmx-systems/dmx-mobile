@@ -14,7 +14,7 @@ const actions = {
 
   logout ({dispatch}) {
     console.log('logout', state.username)
-    dmx.restClient.logout().then(() => {
+    dmx.rpc.logout().then(() => {
       state.username = ''
       dispatch('loggedOut')
     })
@@ -36,6 +36,6 @@ export default {
 
 // init state
 
-dmx.restClient.getUsername().then(username => {
+dmx.rpc.getUsername().then(username => {
   state.username = username
 })
