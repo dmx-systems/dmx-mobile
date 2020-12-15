@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import { MessageBox } from 'element-ui'
-import dm5 from 'dmx-api'
+import dmx from 'dmx-api'
 
 Vue.use(Vuex)
 
@@ -54,16 +54,16 @@ const actions = {
   },
 
   submit ({dispatch}, object) {
-    object.update().then(object => {
-      dispatch('_processDirectives', object.directives)
+    object.update().then(response => {
+      dispatch('_processDirectives', response.directives)
     })
   },
 
   createTopic ({dispatch}, {topicType, value}) {
     // Note: for value integration to work at least all identity fields must be filled
-    const topicModel = new dm5.Topic(topicType.newTopicModel(value)).fillChildren()
+    const topicModel = new dmx.Topic(topicType.newTopicModel(value)).fillChildren()
     // console.log('createTopic', topicModel)
-    dm5.restClient.createTopic(topicModel).then(topic => {
+    dmx.restClient.createTopic(topicModel).then(topic => {
       // console.log('Created', topic)
       dispatch('callTopicRoute', topic.id)
       dispatch('_processDirectives', topic.directives)
@@ -77,8 +77,8 @@ const actions = {
       idLists.topicIds.forEach(id => dispatch('_deleteTopic', id))
       idLists.assocIds.forEach(id => dispatch('_deleteAssoc', id))
       // update server state
-      dm5.restClient.deleteMulti(idLists).then(object => {
-        dispatch('_processDirectives', object.directives)
+      dmx.restClient.deleteMulti(idLists).then(response => {
+        dispatch('_processDirectives', response.directives)
       })
     }).catch(() => {})    // suppress unhandled rejection on cancel
   },
@@ -109,13 +109,13 @@ const actions = {
     directives.forEach(dir => {
       switch (dir.type) {
       case "UPDATE_TOPIC":
-        displayObjectIf(new dm5.Topic(dir.arg))
+        displayObjectIf(new dmx.Topic(dir.arg))
         break
       case "DELETE_TOPIC":
         unselectIf(dir.arg.id)
         break
       case "UPDATE_ASSOCIATION":
-        displayObjectIf(new dm5.Assoc(dir.arg))
+        displayObjectIf(new dmx.Assoc(dir.arg))
         break
       case "DELETE_ASSOCIATION":
         unselectIf(dir.arg.id)

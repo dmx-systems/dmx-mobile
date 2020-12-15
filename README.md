@@ -1,6 +1,6 @@
 # DMX Mobile
 
-A simple webclient for the [DMX platform](https://git.dmx.systems/dmx-platform/dmx-platform) that is optimized for small screens.
+A simple webclient for the [DMX platform](https://github.com/dmx-systems/dmx-platform) that is optimized for small screens.
 
 A running DMX installation is required.
 
@@ -9,7 +9,7 @@ A running DMX installation is required.
 DMX Mobile assumes being cloned inside DMX's `bundle-dev` directory (resp. `modules-external` if you've built DMX from source):
 ```sh
 cd bundle-dev
-git clone https://git.dmx.systems/dmx-plugins/dmx-mobile.git
+git clone https://github.com/dmx-systems/dmx-mobile.git
 ```
 
 ### Build

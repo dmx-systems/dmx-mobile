@@ -1,4 +1,4 @@
-import dm5 from 'dmx-api'
+import dmx from 'dmx-api'
 
 const state = {
   username: '',       // logged in user (string); empty string if no user is logged in
@@ -14,7 +14,7 @@ const actions = {
 
   logout ({dispatch}) {
     console.log('logout', state.username)
-    dm5.restClient.logout().then(() => {
+    dmx.restClient.logout().then(() => {
       state.username = ''
       dispatch('loggedOut')
     })
@@ -36,6 +36,6 @@ export default {
 
 // init state
 
-dm5.restClient.getUsername().then(username => {
+dmx.restClient.getUsername().then(username => {
   state.username = username
 })

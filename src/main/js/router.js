@@ -9,7 +9,7 @@ import VueRouter from 'vue-router'
 import { MessageBox } from 'element-ui'
 import Mobile from './components/dm5-mobile'
 import store from './store/mobile'
-import dm5 from 'dmx-api'
+import dmx from 'dmx-api'
 
 Vue.use(VueRouter)
 
@@ -264,7 +264,7 @@ function navigate (to, from) {
  * Fetches the given topic and displays it in the detail panel.
  */
 function fetchTopic (id) {
-  dm5.restClient.getTopic(id, true, true).then(topic => {       // includeChildren=true, includeAssocChildren=true
+  dmx.restClient.getTopic(id, true, true).then(topic => {       // includeChildren=true, includeAssocChildren=true
     store.dispatch('displayObject', topic)
     store.dispatch('selectDetail', 'info')
   })
@@ -274,7 +274,7 @@ function fetchTopic (id) {
  * Fetches the given assoc and displays it in the detail panel.
  */
 function fetchAssoc (id) {
-  dm5.restClient.getAssoc(id, true, true).then(assoc => {       // includeChildren=true, includeAssocChildren=true
+  dmx.restClient.getAssoc(id, true, true).then(assoc => {       // includeChildren=true, includeAssocChildren=true
     store.dispatch('displayObject', assoc)
     store.dispatch('selectDetail', 'info')
   })
@@ -297,7 +297,7 @@ function objectId(route) {
  */
 function id (v) {
   // Note: Number(undefined) is NaN, and NaN != NaN is true!
-  // Note: dm5.utils.getCookie may return null, and Number(null) is 0 (and typeof null is 'object')
+  // Note: dmx.utils.getCookie may return null, and Number(null) is 0 (and typeof null is 'object')
   if (typeof v === 'number') {
     return v
   } else if (typeof v === 'string') {
