@@ -177,10 +177,11 @@ function confirmDeletion (idLists) {
   }
   let message, buttonText
   if (_size > 1) {
-    message = "You're about to delete multiple items"
+    message = "You're about to delete multiple items!"
     buttonText = `Delete ${_size} items`
   } else {
-    message = `You're about to delete ${idLists.topicIds.length ? 'a topic' : 'an association'}`
+    // TODO: update (see webclient.js)
+    message = `You're about to delete ${idLists.topicIds.length ? 'a topic!' : 'an association!'}`
     buttonText = 'Delete'
   }
   return MessageBox.confirm(message, 'Warning', {
