@@ -2,8 +2,9 @@
   <div class="dm5-mobile">
     <dm5-main-menu></dm5-main-menu>
     <dm5-login-dialog :visible="loginVisible" @logged-in="loggedIn" @close="closeLogin"></dm5-login-dialog>
-    <dm5-search-widget :visible="searchVisible" :create-enabled="createEnabled" :menu-topic-types="menuTopicTypes"
-      width="96%" layout="column" @topic-click="revealTopic" @topic-create="createTopic" @close="closeSearch">
+    <dm5-search-widget :visible="searchVisible" :create-enabled="createEnabled" :create-topic-types="createTopicTypes"
+      :search-assoc-types="searchAssocTypes" width="96%" layout="column"
+      @topic-click="revealTopic" @topic-create="createTopic" @close="closeSearch">
     </dm5-search-widget>
     <dm5-detail-panel :object="object" :writable="writable" :tab="tab" :mode="mode" :quill-config="quillConfig"
       no-pin-button @tab-click="tabClick" @edit="edit" @submit="submit" @submit-inline="submitInline"
@@ -13,6 +14,8 @@
 </template>
 
 <script>
+// import dmx from 'dmx-api'
+
 export default {
 
   computed: {
@@ -49,8 +52,12 @@ export default {
       return this.$store.state.login.username !== ''
     },
 
-    menuTopicTypes () {
-      return this.$store.getters.menuTopicTypes
+    createTopicTypes () {
+      return this.$store.getters.createTopicTypes
+    },
+
+    searchAssocTypes () {
+      return []   // FIXME: dmx.typeCache.getAllAssocTypes()
     }
   },
 

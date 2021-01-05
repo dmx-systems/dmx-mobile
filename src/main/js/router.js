@@ -264,7 +264,7 @@ function navigate (to, from) {
  * Fetches the given topic and displays it in the detail panel.
  */
 function fetchTopic (id) {
-  dmx.rpm.getTopic(id, true, true).then(topic => {       // includeChildren=true, includeAssocChildren=true
+  dmx.rpc.getTopic(id, true, true).then(topic => {       // includeChildren=true, includeAssocChildren=true
     store.dispatch('displayObject', topic)
     store.dispatch('selectDetail', 'info')
   })
