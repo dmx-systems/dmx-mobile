@@ -43,7 +43,7 @@ This launches the Webpack Dev Server (at port 8084), builds DMX Mobile on-the-fl
 
 **0.3** -- Aug 13, 2020
 
-- Compatible with DMX 5.0
+* Compatible with DMX 5.0
 
 **0.2** -- Feb 19, 2020
 
