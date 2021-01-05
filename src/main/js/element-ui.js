@@ -1,9 +1,10 @@
 import Vue from 'vue'
 import {
   Button, Input, Select, Option, OptionGroup, Checkbox, Radio, RadioGroup, Dropdown, DropdownMenu, DropdownItem, Link,
-  Dialog, MessageBox, Tabs, TabPane, Autocomplete, ColorPicker, Loading, Notification
+  Dialog, MessageBox, Collapse, CollapseItem, Tabs, TabPane, Autocomplete, ColorPicker, Loading, Notification
 } from 'element-ui'
 import locale from 'element-ui/lib/locale'
+import DialogDraggable from 'vue-element-dialog-draggable'
 
 // set locale
 locale.use(require('element-ui/lib/locale/lang/en').default)
@@ -27,6 +28,8 @@ Vue.use(DropdownMenu)
 Vue.use(DropdownItem)
 Vue.use(Link)
 Vue.use(Dialog)
+Vue.use(Collapse)
+Vue.use(CollapseItem)
 Vue.use(Tabs)
 Vue.use(TabPane)
 Vue.use(Autocomplete)
@@ -40,3 +43,5 @@ Vue.prototype.$confirm = MessageBox.confirm;
 Vue.prototype.$prompt  = MessageBox.prompt;
 
 Vue.prototype.$notify = Notification
+
+Vue.use(DialogDraggable)
