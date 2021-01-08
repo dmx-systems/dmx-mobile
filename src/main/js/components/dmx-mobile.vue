@@ -1,15 +1,15 @@
 <template>
-  <div class="dm5-mobile">
-    <dm5-main-menu></dm5-main-menu>
-    <dm5-login-dialog :visible="loginVisible" @logged-in="loggedIn" @close="closeLogin"></dm5-login-dialog>
-    <dm5-search-widget :visible="searchVisible" :create-enabled="createEnabled" :create-topic-types="createTopicTypes"
+  <div class="dmx-mobile">
+    <dmx-main-menu></dmx-main-menu>
+    <dmx-login-dialog :visible="loginVisible" @logged-in="loggedIn" @close="closeLogin"></dmx-login-dialog>
+    <dmx-search-widget :visible="searchVisible" :create-enabled="createEnabled" :create-topic-types="createTopicTypes"
       :search-assoc-types="searchAssocTypes" width="96%" layout="column"
       @topic-click="revealTopic" @topic-create="createTopic" @close="closeSearch">
-    </dm5-search-widget>
-    <dm5-detail-panel :object="object" :writable="writable" :tab="tab" :mode="mode" :quill-config="quillConfig"
+    </dmx-search-widget>
+    <dmx-detail-panel :object="object" :writable="writable" :tab="tab" :mode="mode" :quill-config="quillConfig"
       no-pin-button @tab-click="tabClick" @edit="edit" @submit="submit" @submit-inline="submitInline"
       @child-topic-reveal="revealTopic" @related-topic-click="revealTopic" @related-icon-click="revealTopic">
-    </dm5-detail-panel>
+    </dmx-detail-panel>
   </div>
 </template>
 
@@ -113,21 +113,21 @@ export default {
   },
 
   components: {
-    'dm5-main-menu':     require('./dmx-main-menu').default,
-    'dm5-login-dialog':  require('dmx-login-dialog').default,
-    'dm5-search-widget': require('dmx-search-widget').default,
-    'dm5-detail-panel':  require('dmx-detail-panel').default
+    'dmx-main-menu':     require('./dmx-main-menu').default,
+    'dmx-login-dialog':  require('dmx-login-dialog').default,
+    'dmx-search-widget': require('dmx-search-widget').default,
+    'dmx-detail-panel':  require('dmx-detail-panel').default
   }
 }
 </script>
 
 <style>
-.dm5-mobile {
+.dmx-mobile {
   height: 100%;
   display: flex;
 }
 
-.dm5-mobile .dm5-detail-panel {
+.dmx-mobile .dmx-detail-panel {
   flex-grow: 1;
   background-color: var(--background-color);
 }

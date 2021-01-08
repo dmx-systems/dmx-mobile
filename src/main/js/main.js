@@ -10,10 +10,10 @@ import './websocket'
 
 console.log('[DMX Mobile] 2021/01/08')
 
-// 1) Init dm5 library
-// The dm5 library must be inited *before* the dm5-webclient component is instantiated.
-// The dm5-webclient component relies on the "typeCache" store module as registered by dmx.init(). ### TODO: still true?
-const dm5ready = dmx.init({
+// 1) Init dmx library
+// The dmx library must be inited *before* the dmx-webclient component is instantiated.
+// The dmx-webclient component relies on the "typeCache" store module as registered by dmx.init(). ### TODO: still true?
+const dmxready = dmx.init({
   store,
   onHttpError,
   iconRenderers: {}
@@ -39,7 +39,7 @@ store.watch(
 )
 
 // 4) Create Vue root instance
-// Instantiates router-view and dm5-webclient components.
+// Instantiates router-view and dmx-webclient components.
 const root = new Vue({
   el: '#app',
   store,
@@ -53,7 +53,7 @@ const root = new Vue({
 Promise.all([
   // Both, the Topicmap Panel and the Detail Panel, rely on a populated type cache.
   // The type cache must be ready *before* "initialNavigation" is dispatched.
-  dm5ready,
+  dmxready,
   // Initial navigation might involve "select the 1st workspace", so the workspace
   // topics must be already loaded.
   // store.state.workspaces.ready   // ### TODO?

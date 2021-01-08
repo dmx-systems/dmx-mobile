@@ -1,5 +1,5 @@
 <template>
-  <el-dropdown class="dm5-main-menu" size="medium" trigger="click" @command="handle">
+  <el-dropdown class="dmx-main-menu" size="medium" trigger="click" @command="handle">
     <span class="fa fa-bars"></span>
     <el-dropdown-menu slot="dropdown">
       <el-dropdown-item command="openSearchWidget">{{searchLabel}}</el-dropdown-item>
@@ -32,7 +32,7 @@ export default {
 </script>
 
 <style>
-.dm5-main-menu {
+.dmx-main-menu {
   position: absolute !important;
   top: 6px;
   right: 6px;

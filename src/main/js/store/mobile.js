@@ -136,7 +136,7 @@ const getters = {
     return state.object && (state.object.isType()    ? state.object.asType() :
                             state.object.isCompDef() ? state.object.asCompDef() :
                             state.object)
-    // logical copy in createDetail()/updateDetail() (topicmap-model.js of dm5-cytoscape-renderer module)
+    // logical copy in createDetail()/updateDetail() (topicmap-model.js of dmx-cytoscape-renderer module)
   },
 
   showInmapDetails: state => !state.details.visible
@@ -192,7 +192,7 @@ function confirmDeletion (idLists) {
   })
 }
 
-// copy in cytoscape-view.js (module dm5-cytoscape-renderer)
+// copy in cytoscape-view.js (module dmx-cytoscape-renderer)
 // TODO: unify selection models (see selection.js in dmx-topicmaps module)
 function size (idLists) {
   return idLists.topicIds.length + idLists.assocIds.length
