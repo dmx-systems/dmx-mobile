@@ -1,6 +1,6 @@
 {
   "name": "dmx-mobile",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "A simple webclient for the DMX platform",
   "author": "Jörg Richter <jri@dmx.berlin>",
   "license": "AGPL-3.0",

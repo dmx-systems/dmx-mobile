@@ -8,7 +8,7 @@ import 'font-awesome/css/font-awesome.css'
 import './element-ui'
 import './websocket'
 
-console.log('[DMX Mobile] 2021/01/08')
+console.log('[DMX Mobile] 0.3.1')
 
 // 1) Init dmx library
 // The dmx library must be inited *before* the dmx-webclient component is instantiated.
