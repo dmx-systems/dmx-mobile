@@ -7,7 +7,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { MessageBox } from 'element-ui'
-import Mobile from './components/dm5-mobile'
+import Mobile from './components/dmx-mobile'
 import store from './store/mobile'
 import dmx from 'dmx-api'
 
@@ -49,7 +49,7 @@ router.beforeEach((to, from, next) => {
   //   - there is a selection (the detail panel is not empty)
   //   - in the route there is a selection change
   if (store.state.object && objectId(to) !== objectId(from)) {
-    const detailPanel = document.querySelector('.dm5-detail-panel').__vue__
+    const detailPanel = document.querySelector('.dmx-detail-panel').__vue__
     const isDirty = detailPanel.isDirty()
     // console.log('isDirty', isDirty, store.state.object.id)
     if (isDirty) {

@@ -113,7 +113,7 @@ export default {
   },
 
   components: {
-    'dm5-main-menu':     require('./dm5-main-menu').default,
+    'dm5-main-menu':     require('./dmx-main-menu').default,
     'dm5-login-dialog':  require('dmx-login-dialog').default,
     'dm5-search-widget': require('dmx-search-widget').default,
     'dm5-detail-panel':  require('dmx-detail-panel').default
