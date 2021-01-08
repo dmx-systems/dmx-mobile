@@ -1,4 +1,4 @@
-import DM5WebSocket from 'dmx-websocket'
+import DMXWebSocket from 'dmx-websocket'
 import store from './store/mobile'
 
 /* eslint no-new: 0 */
@@ -11,7 +11,7 @@ const MESSAGES = [
   'newRoleType'       // are handled internally by the "dmx" library (see type-cache.js).
 ]
 
-new DM5WebSocket('systems.dmx.webclient', message => {
+new DMXWebSocket('systems.dmx.webclient', message => {
   if (MESSAGES.includes(message.type)) {
     store.dispatch('_' + message.type, message.args)
   }
